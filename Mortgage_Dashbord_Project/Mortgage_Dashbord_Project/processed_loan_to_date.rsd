@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="processed_loan_to_date">
+    <Query>
+      <DataSourceReference>Mortgage</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@LoanAmount">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+          <rd:IsMultiValued>false</rd:IsMultiValued>
+        </DataSetParameter>
+        <DataSetParameter Name="@LoanPurpose">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+          <rd:IsMultiValued>false</rd:IsMultiValued>
+        </DataSetParameter>
+        <DataSetParameter Name="@PropertyUsage">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+          <rd:IsMultiValued>false</rd:IsMultiValued>
+        </DataSetParameter>
+        <DataSetParameter Name="@ReportDate">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>true</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+          <rd:IsMultiValued>false</rd:IsMultiValued>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT		*
+FROM		Financials_SSRS
+WHERE					[LoanAmountGroup] IN	(SELECT items FROM dbo.Split(@LoanAmount,','))
+			AND			[Purpose of Loan] IN	(SELECT items FROM dbo.Split(@LoanPurpose,','))
+			AND			[Property Usage]  IN	(SELECT items FROM dbo.Split(@PropertyUsage,','))
+			
+			and			[ToDate]		  IN    (SELECT ITEMS FROM DBO.SPLIT(@ReportDate,','))</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Loan_Key">
+        <DataField>Loan_Key</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Loan_ID">
+        <DataField>Loan_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Property_ID">
+        <DataField>Property_ID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Purpose_of_Loan">
+        <DataField>Purpose of Loan</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CreditCardAuthorization">
+        <DataField>CreditCardAuthorization</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Refferal">
+        <DataField>Refferal</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Co_Borrower_SSN">
+        <DataField>Co-Borrower SSN</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Rent_or_Own">
+        <DataField>Rent or Own</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LoanDate">
+        <DataField>LoanDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Property_Usage">
+        <DataField>Property Usage</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="MaritalStatus">
+        <DataField>MaritalStatus</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sex">
+        <DataField>Sex</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Race">
+        <DataField>Race</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Age">
+        <DataField>Age</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="BorrowerName">
+        <DataField>BorrowerName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="MonthlyIncome">
+        <DataField>MonthlyIncome</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FormatedReportMonth">
+        <DataField>FormatedReportMonth</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LoanAmount">
+        <DataField>LoanAmount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Purchase_Price">
+        <DataField>Purchase Price</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ToDate">
+        <DataField>ToDate</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ToDateOrder">
+        <DataField>ToDateOrder</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="LoanAmountGroup">
+        <DataField>LoanAmountGroup</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="LoanAmountGroupOrder">
+        <DataField>LoanAmountGroupOrder</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="AgeGroup">
+        <DataField>AgeGroup</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="AgeGroupOrder">
+        <DataField>AgeGroupOrder</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

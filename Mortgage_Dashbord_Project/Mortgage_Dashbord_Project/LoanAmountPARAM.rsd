@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="LoanAmountPARAM">
+    <Query>
+      <DataSourceReference>Mortgage</DataSourceReference>
+      <CommandText>select distinct [LoanAmount]	from 	[dbo].[Financials_SSRS]</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="LoanAmount">
+        <DataField>LoanAmount</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

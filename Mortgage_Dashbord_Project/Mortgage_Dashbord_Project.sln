@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Mortgage_Dashbord_Project", "Mortgage_Dashbord_Project\Mortgage_Dashbord_Project.rptproj", "{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.Debug|Default.ActiveCfg = Debug
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.Debug|Default.Build.0 = DebugLocal
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.Debug|Default.Deploy.0 = DebugLocal
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.DebugLocal|Default.Build.0 = DebugLocal
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.Release|Default.ActiveCfg = Release
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.Release|Default.Build.0 = Release
+		{A9AF5AE7-FCBE-43C8-9AC4-02038322F938}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

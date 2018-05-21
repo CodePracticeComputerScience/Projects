@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="ReportDatePARAM">
+    <Query>
+      <DataSourceReference>Mortgage</DataSourceReference>
+      <CommandText>SELECT distinct [LoanDate] FROM [dbo].[Financials_SSRS]
+	</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="LoanDate">
+        <DataField>LoanDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
